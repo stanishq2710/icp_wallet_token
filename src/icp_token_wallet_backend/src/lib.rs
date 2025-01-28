@@ -1,3 +1,4 @@
+use candid::CandidType;
 // Use the correct imports for ICP development
 use ic_cdk::api::caller;
 use ic_cdk::storage;
@@ -6,7 +7,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
 // Define the Token structure
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(CandidType,Serialize, Deserialize, Clone, Debug)]
 pub struct Token {
     symbol: String,
     name: String,
@@ -15,7 +16,7 @@ pub struct Token {
 }
 
 // Define the Wallet structure
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(CandidType,Serialize, Deserialize, Clone, Debug)]
 pub struct Wallet {
     balances: HashMap<String, u64>, // Maps account IDs to balances
 }
@@ -88,3 +89,4 @@ fn get_balance() -> u64 {
     let (_, wallet) = storage::stable_restore::<(Token, Wallet)>().expect("Failed to restore wallet");
     wallet.get_balance(caller)
 }
+

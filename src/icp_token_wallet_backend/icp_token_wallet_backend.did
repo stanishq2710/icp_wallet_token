@@ -1,3 +1,23 @@
+type Result = variant { Ok; Err: text };
+
+type Token = record {
+    symbol: text;
+    name: text;
+    decimals: nat8;
+    total_supply: nat64;
+};
+
+type Wallet = record {
+    balances: vec: record { text; nat64 };
+};
+
 service : {
-    "greet": (text) -> (text) query;
+    // Initialize the token and wallet (canister initialization)
+    init: (text, text, nat8, nat64) -> ();
+
+    // Send tokens from the caller's account to another account
+    send_token: (text, nat64) -> (Result);
+
+    // Get the balance of the caller's account
+    get_balance: () -> (nat64);
 }

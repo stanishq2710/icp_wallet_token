@@ -3,6 +3,11 @@ name = "icp_token_wallet_backend"
 version = "0.1.0"
 edition = "2021"
 
+#metadata
+description = "A token wallet canister for ICP blockchain"
+license = "MIT"
+repository = "https://github.com/stanishq2710/icp_wallet_token"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
@@ -11,4 +16,4 @@ crate-type = ["cdylib"]
 [dependencies]
 candid = "0.10"
 ic-cdk = "0.16"
-ic-cdk-timers = "0.10" # Feel free to remove this dependency if you don't need timers
+ic-cdk-timers = "0.10" 

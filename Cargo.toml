@@ -1,14 +1,17 @@
-[workspace]
-members = [
-    "src/icp_token_wallet_backend"
-]
-resolver = "2"
+#metadata
+description = "A token wallet canister for ICP blockchain"
+license = "MIT"
+repository = "https://github.com/stanishq2710/icp_wallet_token"
 
 [package]
-name = "token_wallet_backend"
+name = "icp_token_wallet"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-ic-cdk = "0.7.0"  # Ensure this version is compatible with your DFX version
-serde = { version = "1.0", features = ["derive"] }  # For serialization and deserialization
+candid = "0.10.4"
+ic-cdk = "0.16.0"
+ic-cdk-macros = "0.16.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
