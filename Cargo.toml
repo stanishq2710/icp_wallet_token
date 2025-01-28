@@ -3,3 +3,12 @@ members = [
     "src/icp_token_wallet_backend"
 ]
 resolver = "2"
+
+[package]
+name = "token_wallet_backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ic-cdk = "0.7.0"  # Ensure this version is compatible with your DFX version
+serde = { version = "1.0", features = ["derive"] }  # For serialization and deserialization
